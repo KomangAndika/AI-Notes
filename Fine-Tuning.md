@@ -22,6 +22,36 @@ Fine-tuning basically adjusting parameters of the pre-trained LLM to a specific 
 - In feature extraction only the final layer are adjusted, full fine-tuning involves training the entire model on the task-specific data. This means all the model layer are adjusted.
 - This approach beneficial when task-specific dataset is large and significantly different from the pre-training data. But this approach requires more computational resources and time compared to feature extraction.
 
+## Prominent Fine-Tuning Methods
+### a. Supervised fine-tuning
+- In this method model trained on tas-specific labeled dataset. Model learns to adjust its parameters to predict these labels as accurately as possible. Guiding the pre-existing knowledge to specific task at hand. <br>
+Some common supervised fine-tuning techniques are:
+1. Basic hyperparameter tuning
+Involves manually adjusting the model hyperparameters, such as the learning rate, batch size, and the number of epochs, until reached the desired performance.
+2. Transfer learning
+Beneficial with limited task-specific data. In this approach, a model pre-trained on large, general data is used as a starting point. <br>
+The model then fine-tuned on task-specific data, allowing it to adpt its pre-existing knowledge to the new task.
+3. Multi-task learning
+Model fine-tuned on multiple related task simultaneously. The idea is leveraging commonality across tasks to imporve performance. Works better when the tasks are closely related or when there is limited data for individual task. Require labeled dataset for eacht ask.
+4. Few-shot learning
+Making the model adapt to new task with little task-specific data, the idea is leverage vast knowledge base and learn from just a few examples of the task. Beneficial when the task-specific labeled data is scarce. <br>
+Can also be integrated into the RLHF method if the small amount of data also include human feedback that can guide the model's learning process.
+
+### b. Reinforcement Learning From Human Feedback (RLHF)
+1. Reward modeling
+Model generate several possible outputs and human evaluators rank or rate these outputs based on their quality. The model then learns to predict these human-provided rewards and adjusting for better score.
+2. Proximal policy optimization
+PPO is iterative algorithm that updates language model's policy to maximize the expected reward. The core idea is take action that improve policy while ensuring the changes no too drastic from previous policy. Achieved by introducing constraint on the policy update that prevent harmful large update while still allowing beneficial small updates.
+
+### c. Low-Rank Adaptation (LoRA)
+- Highly effective method for fine-tuning, makes possible to run a specialized LLM model on a single machine.
+- The process basically freezing the original model weights and applying changes to a separate set of weights, which then added to the original parameters. LoRA transforms the model params into lower-rank dimension, reducing number of params that need training, speeding up and lowering cost.
+- This useful when multuple clients need fine-tuned models for different applications, allows for creating set of weights for each specific use case without the need for separate models.
+
+### d. Adapters
+Source:
+[Finetuning LLMs Efficiently with Adapters by Sebastian Raschka, PhD](https://magazine.sebastianraschka.com/p/finetuning-llms-with-adapters)
+
 
 
 
