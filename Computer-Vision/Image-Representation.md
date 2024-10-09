@@ -17,3 +17,11 @@ The smalles unit for digital image, any point of it is correspond to the intensi
 - Binary Image (1 bit gray scale), consist of values 0 for black and 1 for white. This is useful in black and white document scanning.
 - Grayscale Image, represented by 2D array where each value varying from 0-255 ranging from black to white.
 - Color Image, represented by 3D array, including multiple channels typically RGB.Each channel is a grayscale representing the intensity level of that color. One example of this Image Modes is RGB where the 3 channels representing Red, Green, and Blue with the value ranging from 0 to 255.
+
+## Color Image Mode
+An image mode determines the number of colors that can be displayed in an image and can also affect the file size of the image. Image modes represent the color space or the number of channels in an image. Some image modes include:
+1. **RGB (Red, Green, Blue)**, most common for digital images, each channel represent Red, Green, and Blue.
+2. **RGBA (Red, Green, Blue)**, most common for digital images, each channel represent Red, Green, and Blue.
+3. **CMYK (Cyan, Magenta, Yellow, Key/Black)** , used in color printing it represent four of that color.
+4. **Indexed (AKA Palette) Color**, uses a color pallete to represent the image. each pixel's color is an index into the palette.
+5. **HSV (Hue, Saturation, Value)**, HSV is often used in computer vision and image processing tasks because it separates information from brightness, making certain operations more intuitive
