@@ -12,3 +12,8 @@ This is basically representing the data in a three-dimen sional matrix. The widt
 
 ## What is mean by Pixel?
 The smalles unit for digital image, any point of it is correspond to the intensity of the light photons striking at that point. Each pixel has unique logical address, a sie of eight bits or more depending on the color system gray or color. In a grayscale image, each pixel have value between 0 and 255, where 0 mean "black" and 255 corresponds 'white". The value between 0 and 255 are varying shades og gray.
+
+## What is mean by Image Type
+- Binary Image (1 bit gray scale), consist of values 0 for black and 1 for white. This is useful in black and white document scanning.
+- Grayscale Image, represented by 2D array where each value varying from 0-255 ranging from black to white.
+- Color Image, represented by 3D array, including multiple channels typically RGB.Each channel is a grayscale representing the intensity level of that color. One example of this Image Modes is RGB where the 3 channels representing Red, Green, and Blue with the value ranging from 0 to 255.
