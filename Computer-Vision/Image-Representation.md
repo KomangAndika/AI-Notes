@@ -25,3 +25,30 @@ An image mode determines the number of colors that can be displayed in an image 
 3. **CMYK (Cyan, Magenta, Yellow, Key/Black)** , used in color printing it represent four of that color.
 4. **Indexed (AKA Palette) Color**, uses a color pallete to represent the image. each pixel's color is an index into the palette.
 5. **HSV (Hue, Saturation, Value)**, HSV is often used in computer vision and image processing tasks because it separates information from brightness, making certain operations more intuitive
+
+## Convert Image Modes
+To change the mode of an image, mode of the image defines tthe type and depth of a pixel in the image.
+### Common Image Modes in Pillow
+1. "1" (1-bit pixel, black and white, stored with one pixel per byte)
+- Purpose: Creating binary images
+- Application: Document scanning, simple graphics
+
+2. "L" (8-bit pixels, grayscale)
+- Purpose: For grayscale images where each pixel is represented by a single byte
+- Application: Image processing tasks where color is not important, reducing image size.
+
+3. "P" (8-bit pixels, mapped to any other mode using a color pallete)
+- Purpose: For image with limited number of colors, up to 256
+- ApplicationL Svaing storage space in image files, GIF images.
+
+4. "RGB" (3x8-bit pixels, true color)
+- Purpose: For standard true-color images with red, green, and blue channels.
+- ApplicationL Most common for displaying images in full color.
+
+5. "RGBA" (4x8-bit pixels, true color with transparency mask)
+- Purpose: For true color with alpha for transparency.
+- Application: Web graphics, icon, images with varying transparency.
+
+6. "CMYK" (4x8-bit pixels, color separation)
+- Purpose: For color printing.
+- Application: Preparing images for printing processes.
