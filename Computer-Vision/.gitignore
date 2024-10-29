@@ -6,4 +6,6 @@ lfw.tgz
 training_checkpoints/
 siamesemodelv2.h5
 
+application_data/
+
 
